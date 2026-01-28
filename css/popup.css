@@ -1,0 +1,151 @@
+/* ============================
+   POPUP OVERLAY (BACKGROUND)
+   ============================ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Gelap */
+    backdrop-filter: blur(5px);      /* Blur */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Pastikan di atas konten */
+}
+
+/* Tetapi JANGAN menutupi sidebar dan navbar */
+.sidebar, .navbar {
+    position: relative;
+    z-index: 1000; 
+}
+
+/* ============================
+   POPUP CARD
+   ============================ */
+.popup-card {
+    width: 450px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.25s ease;
+    position: relative;
+}
+
+/* Animasi halus */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Close button */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #666;
+}
+
+/* ============================
+   POPUP TITLE
+   ============================ */
+.popup-card h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ============================
+   FORM STYLE
+   ============================ */
+.popup-card label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.popup-card .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.popup-card .form-control:focus {
+    border-color: #4a90e2;
+}
+
+/* Dropdown */
+.popup-card select {
+    appearance: none;
+    background: #fff url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M5.516 7.548l4.484 4.487 4.484-4.487L16 8.516l-6 6-6-6z"/></svg>') no-repeat 95% center;
+}
+
+/* Tanggal list */
+.date-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.date-item input {
+    flex: 1;
+}
+
+.remove-date {
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    padding: 0px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Tombol tambah */
+.add-date-btn {
+    background: #4a90e2;
+    color: white;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* ============================
+   BUTTON GROUP
+   ============================ */
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 10px 15px;
+    background: #ccc;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    padding: 10px 15px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.sidebar {
+    width: 450px;
+    position: fixed;
+    z-index: 10;
+    border-radius: 16px;
+    background: #fff;
+    height: calc(100vh - 32px);
+}
+
+.sidebar-header {
+    display: flex;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    width: 220px;
+    height: 130px;
+    margin-left: 80px;
+    margin-bottom: 0;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar-header .toggler {
+    height: 35px;
+    width: 35px;
+    border: none;
+    color: #0C3345;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #ededed;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .toggler:hover {
+    background: #d4d4d4;
+}
+
+.sidebar-header .toggler span {
+    font-size: 1.75rem;
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+}
+
+.sidebar-nav .nav-link {
+    color: #000;
+    display: flex;
+    font-size: 24px;
+    gap: 12px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.nav-link span {
+    font-size: 24px;
+}
+
+.nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+.sidebar-nav .secondary-nav .danger:hover {
+    background: #faa9a9;
+}
+
+/* --- DROPDOWN BUTTON --- */
+.dropdown-btn {
+    font-size: 24px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+}
+
+/* --- SUBMENU HIDDEN BY DEFAULT --- */
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding-left: 55px;
+}
+
+/* --- SUBMENU STYLE --- */
+.sub-menu li a {
+    padding: 8px 0;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.sub-menu li a:hover {
+    color: #2E8BC0;
+}
+
+/* --- ACTIVE DROPDOWN --- */
+.sub-menu.active {
+    max-height: 200px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar-nav .secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.sidebar-nav .secondary-nav h4 {
+    font-size: 24px;
+}
+
+.sidebar-nav .secondary-nav p {
+    font-size: 18px;
+}
+
+.sidebar-nav .secondary-nav .nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.nav-link.active {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+.notif-badge {
+    display: none;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+}
+
+.notif-badge.show {
+    display: inline-flex;
+}

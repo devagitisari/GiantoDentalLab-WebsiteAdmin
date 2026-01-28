@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 2000px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+body[data-title="Permintaan Persetujuan"] #page-title {
+    color: #000;
+    margin-left: 450px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.sidebar {
+    width: 450px;
+    position: fixed;
+    z-index: 10;
+    border-radius: 16px;
+    background: #fff;
+    height: calc(100vh - 32px);
+}
+
+.sidebar-header {
+    display: flex;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    width: 220px;
+    height: 130px;
+    margin-left: 80px;
+    margin-bottom: 0;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar-header .toggler {
+    height: 35px;
+    width: 35px;
+    border: none;
+    color: #0C3345;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #ededed;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .toggler:hover {
+    background: #d4d4d4;
+}
+
+.sidebar-header .toggler span {
+    font-size: 1.75rem;
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+}
+
+.sidebar-nav .nav-link {
+    color: #000;
+    display: flex;
+    font-size: 24px;
+    gap: 12px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.nav-link span {
+    font-size: 24px;
+}
+
+.nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+.sidebar-nav .secondary-nav .danger:hover {
+    background: #faa9a9;
+}
+
+/* --- DROPDOWN BUTTON --- */
+.dropdown-btn {
+    font-size: 24px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+}
+
+/* --- SUBMENU HIDDEN BY DEFAULT --- */
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding-left: 55px;
+}
+
+/* --- SUBMENU STYLE --- */
+.sub-menu li a {
+    padding: 8px 0;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.sub-menu li a:hover {
+    color: #2E8BC0;
+}
+
+/* --- ACTIVE DROPDOWN --- */
+.sub-menu.active {
+    max-height: 200px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar-nav .secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.sidebar-nav .secondary-nav h4 {
+    font-size: 24px;
+}
+
+.sidebar-nav .secondary-nav p {
+    font-size: 18px;
+}
+
+.sidebar-nav .secondary-nav .nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.nav-link.active {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+
+/* MAIN BAGIAN NAVBAR ATAS */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar .box-navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .box-navbar h4 {
+    margin-left: 450px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.icon-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .box-navbar span {
+    margin-left: 20px;
+    font-size: 35px;
+}
+
+
+/* INI BAGIAN MAIN */
+.hero {
+    margin-left: 450px;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    font-size: 28px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";   /* bisa diganti / atau > */
+    margin-right: 8px;
+    color: #939393;
+}
+
+.breadcrumb a {
+    color: #939393;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    font-weight: 500;
+    color: #333;
+}
+
+.informasi {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 2050px;
+}
+
+.informasi h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* CARD DETAIL ORDER */
+.detail-card {
+    background: #fff;
+    border: 2px solid #c7c7c7;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.card-informasi {
+    display: grid;
+    grid-template-columns: 180px 10px 1fr;
+    row-gap: 12px;
+    font-size: 18px;
+}
+
+.card-informasi .label {
+    font-weight: 600;
+}
+
+/* CARD KUNJUNGAN */
+.garansi-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card kunjungan */
+.garansi-card {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 14px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Judul (Kunjungan 1, Kunjungan 2, dll) */
+.garansi-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1c78b7;
+}
+
+.header-card .view-btn {
+    background: #1c78b7;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* paragraf */
+.garansi-card p {
+    margin: 2px 0;
+    font-size: 17px;
+}
+
+/* link lokasi */
+.garansi-card a {
+    color: #1c78b7;
+    text-decoration: none;
+}
+
+.garansi-card a:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Tambah Catatan */
+.btn-selesai {
+    background: #1c78b7;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 28px 24px;
+    border-radius: 18px;
+    width: 320px;
+    text-align: center;
+    animation: scaleIn 0.25s ease;
+}
+
+.popup-icon {
+    font-size: 56px;
+    margin-bottom: 12px;
+    display: inline-flex;
+}
+
+/* loading */
+.popup-icon.loading {
+    color: #1e88e5;
+    animation: spin 1s linear infinite;
+}
+
+/* success */
+.popup-icon.success {
+    color: #2e7d32;
+}
+
+/* error */
+.popup-icon.error {
+    color: #c62828;
+}
+
+.popup-box h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.popup-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

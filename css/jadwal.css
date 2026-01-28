@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 2000px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+body[data-title="Data Pelanggan"] #page-title {
+    color: #000;
+    margin-left: 450px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.sidebar {
+    width: 450px;
+    position: fixed;
+    z-index: 10;
+    border-radius: 16px;
+    background: #fff;
+    height: calc(100vh - 32px);
+}
+
+.sidebar-header {
+    display: flex;
+    padding: 25px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    width: 220px;
+    height: 130px;
+    margin-left: 80px;
+    margin-bottom: 0;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar-header .toggler {
+    height: 35px;
+    width: 35px;
+    border: none;
+    color: #0C3345;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #ededed;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .toggler:hover {
+    background: #d4d4d4;
+}
+
+.sidebar-header .toggler span {
+    font-size: 1.75rem;
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+}
+
+.sidebar-nav .nav-link {
+    color: #000;
+    display: flex;
+    font-size: 24px;
+    gap: 12px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.nav-link span {
+    font-size: 24px;
+}
+
+.nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+.sidebar-nav .secondary-nav .danger:hover {
+    background: #faa9a9;
+}
+
+/* --- DROPDOWN BUTTON --- */
+.dropdown-btn {
+    font-size: 24px;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+}
+
+/* --- SUBMENU HIDDEN BY DEFAULT --- */
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding-left: 55px;
+}
+
+/* --- SUBMENU STYLE --- */
+.sub-menu li a {
+    padding: 8px 0;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.sub-menu li a:hover {
+    color: #2E8BC0;
+}
+
+/* --- ACTIVE DROPDOWN --- */
+.sub-menu.active {
+    max-height: 200px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar-nav .secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.sidebar-nav .secondary-nav h4 {
+    font-size: 24px;
+}
+
+.sidebar-nav .secondary-nav p {
+    font-size: 18px;
+}
+
+.sidebar-nav .secondary-nav .nav-link span.nav-icon {
+    font-size: 30px;
+}
+
+.nav-link.active {
+    background: #BEEAF9;
+    background: linear-gradient(90deg, rgba(190, 234, 249, 1) 27%, rgba(255, 255, 255, 1) 100%);
+}
+
+/* MAIN BAGIAN NAVBAR ATAS */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar .box-navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar .box-navbar h4 {
+    margin-left: 450px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.icon-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .box-navbar span {
+    margin-left: 20px;
+    font-size: 35px;
+}
+
+/* INI BAGIAN MAIN */
+.hero {
+    margin-left: 450px;
+    padding: 20px;
+    padding-top: 100px;
+    gap: 6px;
+
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.header-row h2 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 100px;
+    padding: 40px;
+    max-width: 1250px;
+}
+
+.calendar-container {
+    width: 780px;
+    flex-shrink: 0;
+    margin-bottom: 70px;
+}
+
+.schedule-panel {
+    width: 1080px;
+    flex-shrink: 0;
+}
+
+.calendar {
+    width: 780px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.monthYear {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    width: 250px;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999fa6;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 5px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+}
+
+.date:hover,
+.date.active {
+    background-color: #BEEAF9;
+}
+
+.date.inactive {
+    color: #d2d2d2;
+}
+
+.date.inactive:hover {
+    color: #fff;
+}
+
+.btn-tambah {
+    background: #0C3345;
+    color: #fff;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* utk box jdwal hri ini */
+.box-today {
+    margin-top: 25px;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    width: 785px;
+}
+
+
+.box-today h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.tab-btn {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab-btn button {
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tab-btn .active {
+    background: #074173;
+    color: #fff;
+    border-color: #074173;
+}
+
+.list-jadwal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.jadwal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 14px;
+    margin-bottom: 10px;
+
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    transition: 0.2s ease;
+}
+
+.jadwal-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+.jadwal-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Title (Nama | Aktivitas | Layanan) */
+.jadwal-left .title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937; /* dark gray */
+}
+
+/* Time */
+.jadwal-left .time {
+    font-size: 13px;
+    color: #6b7280; /* gray */
+}
+
+/* =========================
+   RIGHT (CHECKBOX)
+========================= */
+.jadwal-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Custom checkbox */
+.jadwal-right input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2563eb; /* biru */
+}
+
+/*JADWAL YG ADA DAZAINYA*/
+.schedule-panel {
+    flex: 1;                    /* otomatis mengambil sisa ruang */
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    border: 2px solid #5aa8ff;
+    height: fit-content;
+    width: 1080px;  
+}
+
+#scheduleList {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.filter-btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid #5aa8ff;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.filter-btn.active {
+    background: #5aa8ff;
+    color: white;
+}
+.filter-btn:hover {
+    background: #cfe5ff;
+}
+
+.schedule-item {
+    background: #bce0ff;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.schedule-item .waktu {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.schedule-item .info p {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+.schedule-item .alamat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #333;
+}
+
+.schedule-item .badge {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: #074173;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+/* ============================
+    CARD JADWAL 
+=============================== */
+
+.schedule-card {
+    width: 1010px;
+    background: #CFEFFA;
+    padding: 18px 24px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    row-gap: 6px;
+
+    position: relative;
+}
+
+/* Waktu (10.00 - 12.00 WIB) */
+.schedule-card .time {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    grid-column: 1 / 2;
+    margin-bottom: 10px;
+}
+
+/* Kanan atas — Badge "Kunjungan 1" */
+.schedule-right {
+    grid-column: 2 / 3;
+    justify-self: end;
+}
+
+.schedule-right .badge {
+    background: #1A73E8;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Nama pelanggan */
+.schedule-left h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    grid-column: 1 / 3;
+}
+
+/* Keterangan */
+.schedule-left .desc {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    grid-column: 1 / 3;
+    margin-bottom: 10px;
+}
+
+/* Alamat */
+.schedule-left .address {
+    margin: 6px 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    color: #333;
+    grid-column: 1 / 3;
+}
+
+.schedule-left .address .material-symbols-rounded {
+    font-size: 20px;
+    color: #D62828;
+}
+
+.empty-schedule {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+}
+

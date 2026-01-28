@@ -1,0 +1,246 @@
+<style>
+    /* ==== BACKDROP ==== */
+    .popup-kunjungan {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(4px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* ==== CARD ==== */
+    .popup-card {
+        width: 820px;
+        background: #ffffff;
+        padding: 25px 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        animation: popupScale .25s ease;
+    }
+
+    /* ==== ANIMATION ==== */
+    @keyframes popupScale {
+        from {
+            transform: scale(0.85);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* ==== CLOSE BUTTON ==== */
+    .popup-close {
+        position: absolute;
+        right: 18px;
+        top: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+        z-index: 10;
+    }
+
+    /* ==== HEADER ==== */
+    .header-kunjungan {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .tanggal-kunjungan {
+        margin-left: auto;
+        /* dorong ke kanan */
+        background-color: #00334E;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+
+    .header-kunjungan h2 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    /* ==== INPUT STYLE ==== */
+    .form-control {
+        width: 100%;
+        padding: 10px 14px;
+        margin-top: 4px;
+        margin-bottom: 15px;
+        border: 1px solid #d3d3d3;
+        border-radius: 30px;
+        font-size: 15px;
+        outline: none;
+    }
+
+    .form-control:focus {
+        border-color: #00334E;
+    }
+
+    /* ==== SECTION TITLE ==== */
+    .infomasi-gigi h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        margin-top: 10px;
+    }
+
+    /* ==== INPUT GROUP RP ==== */
+    .input-rp-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        border: 1px solid #d3d3d3;
+        border-radius: 30px;
+        padding: 8px 15px;
+        width: 260px;
+        margin-bottom: 15px;
+    }
+
+    .rp-label {
+        font-weight: 600;
+        user-select: none;
+    }
+
+    .rp-input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    /* Tombol popup */
+    .popup-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .btn-submit {
+        background: #00334E;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .btn-cancel {
+        background: #C30909;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+
+    .status-info {
+        font-weight: 600;
+        color: #d32f2f;
+    }
+
+    .status-info.lunas {
+        color: #2e7d32;
+    }
+</style>
+
+
+<div id="popupKunjungan1" class="popup-kunjungan">
+    <div class="popup-card">
+
+        <span class="popup-close" onclick="closePopUp()">✕</span>
+        <div class="header-kunjungan">
+            <h2>Catatan Kunjungan 1</h2>
+            <div class="tanggal-kunjungan" id="pop_tanggalKunjungan"></div>
+        </div>
+
+        <label>ID Order</label>
+        <input id="pop_idOrder" class="form-control" readonly>
+
+        <label>Nama</label>
+        <input id="pop_nmPelanggan" class="form-control" readonly>
+
+        <label>Jenis Layanan</label>
+        <input id="pop_jenisLayanan" class="form-control" readonly>
+
+        <div class="infomasi-gigi">
+            <h3>Keterangan</h3>
+
+            <label>Jumlah Gigi</label>
+            <input id="pop_jmlhGigi" class="form-control" type="text" placeholder="0">
+
+            <label>Warna</label>
+            <select id="pop_warna" class="form-control">
+                <option value="">-- Pilih Warna --</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A35">A35</option>
+                <option value="A4">A4</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="B4">B4</option>
+                <option value="C1">B1</option>
+                <option value="C2">C2</option>
+                <option value="C3">C3</option>
+                <option value="C4">C4</option>
+                <option value="D1">D1</option>
+                <option value="D2">D2</option>
+                <option value="D3">D3</option>
+                <option value="D4">D4</option>
+            </select>
+
+            <label>ID Bahan</label>
+            <select id="pop_idBahan" class="form-control">
+                <option value="">-- Pilih Bahan --</option>
+                <option value="BHN001">Kawat</option>
+                <option value="BHN002">Tanpa Kawat</option>
+            </select>
+        </div>
+
+        <label>Total</label>
+        <div class="input-rp-group">
+            <span class="rp-label">Rp</span>
+            <input id="pop_total" class="rp-input" type="text" placeholder="0">
+        </div>
+
+        <label>Uang Muka yg Telah Dibayarkan</label>
+        <div class="input-rp-group">
+            <span class="rp-label">Rp</span>
+            <input id="pop_terbayar" class="rp-input" type="text" placeholder="0">
+        </div>
+
+        <label>Sisa Pembayaran</label>
+        <div class="input-rp-group">
+            <span class="rp-label">Rp</span>
+            <input id="pop_sisaBayar" class="rp-input" type="text" placeholder="0">
+        </div>
+
+        <label>Status Pembayaran</label>
+        <p id="infoStatusBayar" class="status-info"></p>
+
+        <div class="popup-buttons">
+            <button class="btn-cancel" onclick="closePopUp()">Batal</button>
+            <button class="btn-submit" onclick="submitApproval()">Simpan</button>
+        </div>
+    </div>
+</div>

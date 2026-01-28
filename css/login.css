@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#dde6ed, #d0e6fd);
+}
+
+.container {
+    position: relative;
+    width: 1200px;
+    height: 650px;
+    margin: 20px;
+    background: #FFFFFF;
+    background: url("../img/bg.png") right/cover no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.container h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 39px;
+    margin: -10px;
+}
+
+.container p {
+    font-size: 20px;
+    padding-top: 10px;
+    margin: -10px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-box {
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    flex: 1;                 
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.form-box h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form-box p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container.active .form-box {
+    left: 50%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2d2d2d;
+}
+
+.input-box {
+    position: relative;   /* ❗ WAJIB supaya icon bisa nempel di input */
+}
+
+.input-box input{
+    position: relative;
+    padding: 13px 50px 13px 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #adadad;
+    font-weight: 500;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;                  /* biar pas tengah */
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password svg {
+    pointer-events: none; /* 🟢 biar kliknya ke span */
+}
+
+.remember-forget-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -15px 0 25px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.remember input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-pw {
+    text-decoration: underline;
+    color: #3a2d2d;
+    font-weight: 500;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background: #0C3345;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-image: url('../img/bg-hp.png');
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 20px;
+        background: transparent !important;
+        box-shadow: none;
+    }
+
+    /* 🟢 Buat container jadi layout vertikal */
+    .form-box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 25px;
+        background: rgba(255, 255, 255, 0.9);
+        left: 0 !important;
+        border-radius: 25px; 
+        transform: none;
+    }
+
+    /* Heading lebih kecil */
+    .container h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container p {
+        font-size: 10px;
+        text-align: center;
+        
+    }
+
+    .input-box input {
+        font-size: 14px;
+        padding: 12px 45px 12px 16px;
+    }
+
+    .toggle-password {
+        display: flex;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 12px;
+        top: 58%;
+        align-items: center;
+        height: 100%;
+    }
+
+    .remember-forget-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

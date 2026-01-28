@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+header {
+    background: 
+        linear-gradient(#0c334580, #1976D280),
+        url('../img/bg-hero.png') center/cover no-repeat;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+
+.navbar .box-navbar {
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar .box-navbar img {
+    margin-top: 10px;
+    margin-left: 50px;
+    height: 100px;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.hero .box-hero {
+    display: flex;
+    align-items: center;
+}
+
+.box-hero .box {
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.box-hero .box h1 {
+    margin-top: 20px;
+    font-size: 100px;
+}
+
+.box-hero .box p{
+    padding-top: 20px;
+    font-size: 25px;
+    margin-bottom: 24px;
+    max-width: 850px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.login-btn {
+    padding-top: 40px;
+    display: inline-flex;
+    background-color: white;
+    color: #0c3345;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 150px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+    box-shadow: 0 6px 12px rgba(37,211,102,0.18);
+    gap: 15px;
+}
+
+@media screen and (max-width: 900px) {
+
+    .login-btn {
+        padding: 12px 100px; /* fix: tidak terlalu besar */
+        font-size: 20px;
+    }
+
+    .navbar .box-navbar img {
+        margin-left: 20px; /* default kamu 50px → kebesaran */
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+    }
+
+    .navbar .box-navbar {
+        background-color: white;
+        display: flex;
+        padding: 0;
+    }
+
+    .navbar .box-navbar img {
+        height: 60px;
+    }
+
+    .box-hero .box h1 {
+        margin-top: 10px;
+        font-size: 40px;
+    }
+
+    .box-hero .box p{
+        padding-top: 20px;
+        font-size: 14px;
+        margin-bottom: 24px;
+        max-width: 850px;
+        line-height: 1.5;
+        padding-bottom: 20px;
+    }
+
+    
+}
